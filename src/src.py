@@ -49,20 +49,19 @@ class MinHeap:
             else:
                 break
 
-def get_max_child_index(self, i):
-        if(self.has_left_child(i)):
-            left_c = self.get_left_child(i)
-            if(self.has_right_child(i)):
-                right_c = self.get_right_child(i)
-                if (self.heap[left_c] > self.heap[right_c]):
-                    return left_c
+    def get_max_child_index(self, i):
+            if(self.has_left_child(i)):
+                left_c = self.get_left_child(i)
+                if(self.has_right_child(i)):
+                    right_c = self.get_right_child(i)
+                    if (self.heap[left_c] > self.heap[right_c]):
+                        return left_c
+                    else:
+                        return right_c
                 else:
-                    return right_c
+                    return left_c
             else:
-                return left_c
-        else:
-            return -1
-
+                return -1
 
     def print_heap(self):
         print(self.heap)
